@@ -1,0 +1,143 @@
+/* General Styles */
+body {
+    font-family: Arial, sans-serif;
+    text-align: center;
+    margin: 0;
+}
+
+/* Welcome Screen */
+#welcomeScreen {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background: url('https://img.freepik.com/free-vector/hand-drawn-flat-design-sudoku-game-design_23-2149290806.jpg?semt=ais_hybrid') no-repeat center center fixed;
+    background-size: cover;
+    color: black;
+}
+
+/* Buttons */
+.btn {
+    padding: 12px 25px;
+    font-size: 1.2rem;
+    margin: 10px;
+    cursor: pointer;
+    border: none;
+    border-radius: 5px;
+    background: #4CAF50;
+    color: white;
+    transition: 0.3s;
+}
+
+.btn:hover {
+    background: #45a049;
+}
+
+.back-btn {
+    background: blue;
+    display: block;
+    margin-top: 15px;
+}
+
+.back-btn:hover {
+    background: darkblue;
+}
+
+/* Game Page */
+#gameContainer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 100vh;
+    background: url('https://www.shutterstock.com/shutterstock/photos/541488106/display_1500/stock-photo-smooth-flat-vintage-paper-bag-pale-texture-in-light-blue-color-on-table-background-organic-soft-541488106.jpg') no-repeat center center fixed;
+    background-size: cover;
+    padding-top: 20px;
+}
+
+/* Sudoku Grid */
+.sudoku-board {
+    display: grid;
+    grid-template-columns: repeat(9, 50px);
+    grid-template-rows: repeat(9, 50px);
+    gap: 1px;
+    margin: 20px;
+    padding: 5px;
+    background: white;
+    border: 3px solid black;
+}
+
+/* Sudoku Cells */
+.cell {
+    width: 50px;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.5rem;
+    border: 1px solid #bbb;
+    background: #fff;
+}
+
+/* Editable Cells */
+.cell[contenteditable="true"] {
+    background: #f9f9f9;
+}
+
+/* Green and Red Coloring */
+.cell.green {
+    color: green;
+    font-weight: bold;
+}
+
+.cell.red {
+    color: red;
+    font-weight: bold;
+}
+
+/* Darker Borders for 3x3 Grid */
+.cell:nth-child(3n) {
+    border-right: 2px solid black;
+}
+.cell:nth-child(n+19):nth-child(-n+27),
+.cell:nth-child(n+46):nth-child(-n+54) {
+    border-bottom: 2px solid black;
+}
+
+/* Stronger Borders for 3×3 Blocks */
+.cell:nth-child(9n+1),
+.cell:nth-child(9n+4),
+.cell:nth-child(9n+7) {
+    border-left: 3px solid black;
+}
+
+.cell:nth-child(n+1):nth-child(-n+9),
+.cell:nth-child(n+28):nth-child(-n+36),
+.cell:nth-child(n+55):nth-child(-n+63) {
+    border-top: 3px solid black;
+}
+
+.cell:nth-child(9n) {
+    border-right: 3px solid black;
+}
+
+.cell:nth-child(n+73):nth-child(-n+81) {
+    border-bottom: 3px solid black;
+}
+
+/* Resume Box */
+#resumeBox {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: rgba(0, 0, 0, 0.8);
+    color: white;
+    padding: 15px 30px;
+    font-size: 1.5rem;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+    z-index: 1000;
+    opacity: 1;
+    transition: opacity 0.5s ease-out;
+}
